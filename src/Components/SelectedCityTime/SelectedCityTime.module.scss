@@ -1,0 +1,24 @@
+
+.selectedCityDateAndTime {
+    display: flex;
+    justify-self: end;
+    width: 100%;
+
+    .selectedCityTime  {
+        align-items: baseline;
+        display: flex;
+    }
+
+    .emptyContainer {
+        width: 100%;
+    }
+
+    .amPmIcon {
+        width: 10%;
+        margin: 0 0 -10px 5px;
+    }
+
+    .citySec {
+        font-size: smaller;
+    }
+}
