@@ -1,6 +1,7 @@
 .selectedCityTempDetails {
     display: grid;
     grid-gap: 10px;
+    max-width: 80%;
     grid-template-columns: repeat(3, 0.5fr);
 
     .lineBreak {

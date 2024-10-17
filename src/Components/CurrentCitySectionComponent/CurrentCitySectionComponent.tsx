@@ -44,12 +44,10 @@ const CurrentCityComponent = () => {
                     ? 
                         <img src={`public/city-icons/${selectedCity}.svg`} alt='City Icon' className={styles.selectedCityIcon}/>
                     : <span className={styles.selectedCityIcon}>Select a city</span> }
-                    <div className={styles.citySelector}>
                         <input list="cities" onChange={(e) => handleDatalistChange(e)} name="cities" id="citySelectorDropDown" className={styles.citiesDropDown}/>
                         <datalist id="cities">
                             {cityNames.map(cityName => <option key={cityName} value={cityName} className={styles.options} />)}
                         </datalist>
-                    </div>
                 </div>
                 { selectedCityDetails
                 &&<SelectedCityTime cityDetails={selectedCityDetails}/>
