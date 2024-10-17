@@ -1,0 +1,34 @@
+.forecastContainer {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+
+    .forecastFragContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+
+        * {
+            margin: 5px;
+        }
+    }
+
+    .forecastTime {
+        opacity: 0.6;
+        white-space: nowrap;
+    }
+
+    .lineBreak {
+        width: 1px;
+        height: 15px;
+        border: 1px solid #737373;
+        align-self: center;
+        justify-self: center;
+    }
+
+    .WeatherIcon {
+        width: 25px;
+        height: 25px;
+    }
+}
