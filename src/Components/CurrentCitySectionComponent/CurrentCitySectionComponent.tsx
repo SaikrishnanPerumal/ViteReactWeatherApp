@@ -7,7 +7,7 @@ import SelectedCityTime from '../SelectedCityTime/SelectedCityTime';
 import SelectedCityForecast from '../SelectedCityForecast/SelectedCityForecast';
 
 const CurrentCityComponent = () => {
-    const { cities, isCitiesLoading, selectedCity, setSelectedCity } = useCitiesContext();
+    const { cities, selectedCity, setSelectedCity } = useCitiesContext();
     const [validCitySelected, setIfValidCitySelected] = useState<boolean>(false);
     const [selectedCityDetails, setSelectedCityObject] = useState<City | undefined>(undefined);
 
@@ -30,10 +30,6 @@ const CurrentCityComponent = () => {
 
     const getSelectedCityDetails = (updatedCity?: string): City | undefined => {
         return cities?.find(city => city.cityName === updatedCity);
-    }
-
-    if (isCitiesLoading) {
-        return <div className={styles.loadingCities}>Loading...</div>;
     }
 
     return <>
