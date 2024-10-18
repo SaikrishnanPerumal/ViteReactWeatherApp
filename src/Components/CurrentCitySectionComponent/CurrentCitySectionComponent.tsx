@@ -7,7 +7,7 @@ import SelectedCityTime from '../SelectedCityTime/SelectedCityTime';
 import SelectedCityForecast from '../SelectedCityForecast/SelectedCityForecast';
 
 const CurrentCityComponent = () => {
-    const { cities, isCitiesLoading, selectedCity, setSelectedCity } = useCitiesContext();
+    const { cities, selectedCity, setSelectedCity } = useCitiesContext();
     const [validCitySelected, setIfValidCitySelected] = useState<boolean>(false);
     const [selectedCityDetails, setSelectedCityObject] = useState<City | undefined>(undefined);
 
@@ -32,17 +32,13 @@ const CurrentCityComponent = () => {
         return cities?.find(city => city.cityName === updatedCity);
     }
 
-    if (isCitiesLoading) {
-        return <div className={styles.loadingCities}>Loading...</div>;
-    }
-
     return <>
         <div className={styles.selectedCityWithTempContainer}>
             <div className={styles.selectedCityContainer}>
                 <div className={styles.selectedCityInnerContainer}>
                     { validCitySelected
                     ? 
-                        <img src={`public/city-icons/${selectedCity}.svg`} alt='City Icon' className={styles.selectedCityIcon}/>
+                        <img src={`city-icons/${selectedCity.toLocaleLowerCase()}.svg`} alt='City Icon' className={styles.selectedCityIcon}/>
                     : <span className={styles.selectedCityIcon}>Select a city</span> }
                         <input list="cities" onChange={(e) => handleDatalistChange(e)} name="cities" id="citySelectorDropDown" className={styles.citiesDropDown}/>
                         <datalist id="cities">

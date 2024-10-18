@@ -1,6 +1,19 @@
+@mixin setColors($background-color, $text-color) {
+    background-color: $background-color;
+    color: $text-color;
+}
+
 .dashboardContainer {
     width: 100vw;
     height: 100vh;
-    background-color: #191919;
-    color: #ffffff;
+    @include setColors(#191919, #ffffff);
+}
+
+.loadingCities {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include setColors(#191919, #ffffff);
 }
