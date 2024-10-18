@@ -38,7 +38,7 @@ const CurrentCityComponent = () => {
                 <div className={styles.selectedCityInnerContainer}>
                     { validCitySelected
                     ? 
-                        <img src={`public/city-icons/${selectedCity}.svg`} alt='City Icon' className={styles.selectedCityIcon}/>
+                        <img src={`city-icons/${selectedCity.toLocaleLowerCase()}.svg`} alt='City Icon' className={styles.selectedCityIcon}/>
                     : <span className={styles.selectedCityIcon}>Select a city</span> }
                         <input list="cities" onChange={(e) => handleDatalistChange(e)} name="cities" id="citySelectorDropDown" className={styles.citiesDropDown}/>
                         <datalist id="cities">

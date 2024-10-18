@@ -23,11 +23,11 @@ const getTimeListForForecast = (city_Date_Time_Name: string, dummyForecastData: 
 
 const getWeatherIconBasedOnTemperature = (temp: number): string => {
     if (temp < 10) {
-        return 'public/weather-icons/humidityIcon.svg';
+        return 'weather-icons/humidityIcon.svg';
     } else if (temp >= 10 && temp < 20) {
-        return 'public/weather-icons/cloudyIcon.svg';
+        return 'weather-icons/cloudyIcon.svg';
     } else {
-        return 'public/weather-icons/sunnyIcon.svg';
+        return 'weather-icons/sunnyIcon.svg';
     }
 }
 

@@ -52,7 +52,7 @@ const SelectedCityTime = ({ cityDetails }: SelectedCityTimeProps) => {
         <span className={styles.cityTime}>{selectedCityDateTime.min.padStart(2, '0')}</span>:
         <span className={styles.citySec}>{selectedCityDateTime.sec.padStart(2, '0')}</span>
         <img
-          src={`public/general-icons/${selectedCityDateTime.amPm.toLowerCase()}.svg`}
+          src={`general-icons/${selectedCityDateTime.amPm.toLowerCase()}.svg`}
           alt="AM/PM"
           className={styles.amPmIcon}
         />

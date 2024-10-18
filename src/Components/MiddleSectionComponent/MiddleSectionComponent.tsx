@@ -10,11 +10,11 @@ const enum QuickWeatherType {
 
 const getWeatherIcon = (temperature: number) => {
     if(temperature > 30) {
-        return 'public/weather-icons/sunnyIcon.svg';
+        return 'weather-icons/sunnyIcon.svg';
     } else if(temperature < 10) {
-        return 'public/weather-icons/snowflakeIcon.svg';
+        return 'weather-icons/snowflakeIcon.svg';
     } else {
-        return 'public/weather-icons/rainyIcon.svg';
+        return 'weather-icons/rainyIcon.svg';
     }
 }
 
@@ -42,9 +42,9 @@ const MiddleSectionComponent = () => {
             <div className={styles.emptyDiv}></div>
             <div className={styles.topCities}>Top cities around world</div>
             <div className={styles.weatherPreferenceContainer}>
-                <img className={`${styles.weatherIcon} ${selectedWeather==QuickWeatherType.sunny ? styles.active : ''}`} onClick={() => setSelectedWeather(QuickWeatherType.sunny)} alt='sunny' src="public/weather-icons/sunnyIcon.svg"/>
-                <img className={`${styles.weatherIcon} ${selectedWeather==QuickWeatherType.snowy ? styles.active : ''}`} onClick={() => setSelectedWeather(QuickWeatherType.snowy)} alt='snowy' src="public/weather-icons/snowflakeIcon.svg"/>
-                <img className={`${styles.weatherIcon} ${selectedWeather==QuickWeatherType.rainy ? styles.active : ''}`} onClick={() => setSelectedWeather(QuickWeatherType.rainy)} alt='rainy' src="public/weather-icons/rainyIcon.svg"/>
+                <img className={`${styles.weatherIcon} ${selectedWeather==QuickWeatherType.sunny ? styles.active : ''}`} onClick={() => setSelectedWeather(QuickWeatherType.sunny)} alt='sunny' src="weather-icons/sunnyIcon.svg"/>
+                <img className={`${styles.weatherIcon} ${selectedWeather==QuickWeatherType.snowy ? styles.active : ''}`} onClick={() => setSelectedWeather(QuickWeatherType.snowy)} alt='snowy' src="weather-icons/snowflakeIcon.svg"/>
+                <img className={`${styles.weatherIcon} ${selectedWeather==QuickWeatherType.rainy ? styles.active : ''}`} onClick={() => setSelectedWeather(QuickWeatherType.rainy)} alt='rainy' src="weather-icons/rainyIcon.svg"/>
                 <span className={styles.displayTopText}>Display Top</span>
                 <input type="number" className={styles.displayTopSpinner} value={displayTop} min='3' max='20' onChange={handleDisplayTopChange}/>
              </div>
@@ -52,7 +52,7 @@ const MiddleSectionComponent = () => {
         <div className={styles.middleSectionCitiesContainer}>
             {citiesToDisplay && citiesToDisplay.slice(0, displayTop).map(city => {
                 return(
-                <div className={styles.middleSectionCityTile} key={city.cityName} style={{backgroundImage: `url(public/city-icons/${city.cityName}.svg)`}}>
+                <div className={styles.middleSectionCityTile} key={city.cityName} style={{backgroundImage: `url(city-icons/${city.cityName}.svg)`}}>
                     <div className={styles.nameAndTemperature}>
                         <span className={styles.cityName}>{city.cityName}</span>
                         <span className={styles.cityTemp}>
@@ -62,11 +62,11 @@ const MiddleSectionComponent = () => {
                     </div>
                     <div className={styles.weatherDetails}>
                         <span className={styles.weatherDetail}>
-                            <img className={styles.weatherDetailIcon} src="public/weather-icons/humidityIcon.svg" alt='wind'/>
+                            <img className={styles.weatherDetailIcon} src="weather-icons/humidityIcon.svg" alt='wind'/>
                             <p>{city.humidity}</p>
                             </span>
                         <span className={styles.weatherDetail}>
-                            <img className={styles.weatherDetailIcon} src="public/weather-icons/precipitationIcon.svg" alt='wind'/>
+                            <img className={styles.weatherDetailIcon} src="weather-icons/precipitationIcon.svg" alt='wind'/>
                             <p>{city.precipitation}</p>
                             </span>
                     </div>
